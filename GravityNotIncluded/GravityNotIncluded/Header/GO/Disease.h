@@ -9,6 +9,7 @@ class Disease: public GameObject
 private:
 	const char* m_Sequence;
 	short m_size;
+	// chance to kill
 
 	//Disease_AI* m_AI;
 
@@ -20,6 +21,8 @@ public:
 	Disease();
 
 	void Evolve();
+
+	short getSize();
 
 	bool Compare(Cure* t_Cure);
 

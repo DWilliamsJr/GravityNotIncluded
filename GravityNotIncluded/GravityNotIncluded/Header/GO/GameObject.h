@@ -13,13 +13,14 @@ private:
 	SoundComp* m_Sound;
 	PhysicsComp* m_Physics;
 	Pos m_Pos;
+	std::string m_ID;
 
 public:
 	GraphicsComp* getGraphics();
 	SoundComp* getsound();
 	PhysicsComp* getPhysics();
 	Pos& getPos();
-
+	std::string getID();
 protected:
 
 	virtual void update() = 0;

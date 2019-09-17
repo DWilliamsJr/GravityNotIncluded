@@ -1,3 +1,4 @@
+#include "PCH.h"
 #include "GO/GameObject.h"
 
 GraphicsComp* GameObject::getGraphics()
@@ -18,4 +19,9 @@ PhysicsComp* GameObject::getPhysics()
 Pos& GameObject::getPos()
 {
 	return m_Pos;
+}
+
+std::string GameObject::getID()
+{
+	return m_ID;
 }

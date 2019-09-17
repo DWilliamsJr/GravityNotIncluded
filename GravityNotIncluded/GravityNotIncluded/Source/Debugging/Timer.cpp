@@ -1,3 +1,4 @@
+#include "PCH.h"
 #include "Debugging/Timer.h"
 
 Timer::Timer(const char* File, short Line)
@@ -6,9 +7,15 @@ Timer::Timer(const char* File, short Line)
 
 	start = std::clock();
 }
+Timer::Timer()
+{
+
+}
 Timer::~Timer()
 {
 	duration = (std::clock() - start) / (double)CLOCKS_PER_SEC;
+	std::ostringstream strs;
+	strs << duration;
 
-	std::cout << "Time Elapsed: " << duration << std::endl;
+	new message(_TIMER, "Time Elapsed: " + strs.str(), __FILE__, __LINE__);
 }

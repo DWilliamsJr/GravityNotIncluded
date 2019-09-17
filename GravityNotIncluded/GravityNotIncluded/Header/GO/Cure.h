@@ -23,6 +23,8 @@ public:
 
 	char* getSequence();
 
+	void setIsReady();
+
 	bool Status();
 
 	void GameObject::update();

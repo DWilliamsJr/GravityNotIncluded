@@ -1,5 +1,7 @@
-#pragma once
 #include "PCH.h"
+#pragma once
+#include <windows.h> 
+
 
 class message
 {
@@ -11,12 +13,19 @@ public:
 	short Priority();
 	void ToString();
 
-	message* getThis();
+
+		//MESSAGEMANAGER
+	static void printMessages(short t_priority);
+	static void addMessage(message &t_message);
+	static void clear();
 
 protected:
 	short m_TextColor;
 	std::string m_File;
 	short m_Line;
 	std::string m_Text;
+
+
+	
 
 };

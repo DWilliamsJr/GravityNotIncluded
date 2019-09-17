@@ -1,3 +1,4 @@
+#include "PCH.h"
 #include "GO/Cure.h"
 
 Cure::Cure(short size)
@@ -27,6 +28,11 @@ bool Cure::Status()
 char* Cure::getSequence()
 {
 	return m_Sequence;
+}
+
+void Cure::setIsReady()
+{
+	isReady = true;
 }
 
 void Cure::update()

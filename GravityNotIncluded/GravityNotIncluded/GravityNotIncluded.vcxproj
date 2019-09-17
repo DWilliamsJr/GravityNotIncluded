@@ -77,6 +77,8 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)GravityNotIncluded\Header;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>PCH.h</PrecompiledHeaderFile>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -86,6 +88,8 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)GravityNotIncluded\Header;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>PCH.h</PrecompiledHeaderFile>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -97,6 +101,8 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)GravityNotIncluded\Header;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>PCH.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -112,6 +118,8 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)GravityNotIncluded\Header;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>PCH.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -123,27 +131,34 @@
     <ClCompile Include="Source\Comp\PhysicsComp.cpp" />
     <ClCompile Include="Source\Comp\SoundComp.cpp" />
     <ClCompile Include="Source\Debugging\Message.cpp" />
-    <ClCompile Include="Source\Debugging\messageManager.cpp" />
     <ClCompile Include="Source\Debugging\Timer.cpp" />
     <ClCompile Include="Source\GO\Cure.cpp" />
     <ClCompile Include="Source\GO\Disease.cpp" />
     <ClCompile Include="Source\GO\Entity.cpp" />
     <ClCompile Include="Source\GO\GameObject.cpp" />
+    <ClCompile Include="Source\GO\Planet.cpp" />
     <ClCompile Include="Source\main.cpp" />
     <ClCompile Include="Source\Other\State.cpp" />
     <ClCompile Include="Source\Other\StateLibrary.cpp" />
+    <ClCompile Include="Source\PCH.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Header\Comp\AI\AI.h" />
     <ClInclude Include="Header\Comp\GraphicsComp.h" />
     <ClInclude Include="Header\Comp\PhysicsComp.h" />
     <ClInclude Include="Header\Comp\SoundComp.h" />
     <ClInclude Include="Header\Debugging\message.h" />
-    <ClInclude Include="Header\Debugging\messageManager.h" />
     <ClInclude Include="Header\Debugging\Timer.h" />
     <ClInclude Include="Header\GO\Cure.h" />
     <ClInclude Include="Header\GO\Disease.h" />
     <ClInclude Include="Header\GO\Entity.h" />
     <ClInclude Include="Header\GO\GameObject.h" />
+    <ClInclude Include="Header\GO\Planet.h" />
     <ClInclude Include="Header\Other\Request.h" />
     <ClInclude Include="Header\Other\Resources.h" />
     <ClInclude Include="Header\Other\State.h" />

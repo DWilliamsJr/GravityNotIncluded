@@ -11,6 +11,7 @@ private:
 	double duration;
 
 public:
+	Timer();
 	Timer(const char* File, short Line);
 	~Timer();
 };

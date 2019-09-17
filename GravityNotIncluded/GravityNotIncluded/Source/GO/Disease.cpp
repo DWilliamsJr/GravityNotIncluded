@@ -1,3 +1,4 @@
+#include "PCH.h"
 #include "GO/Disease.h"
 
 Disease::Disease(short size)
@@ -18,6 +19,11 @@ void Disease::Evolve()
 	// CHANGE UP THE SEQUENCE
 }
 
+short Disease::getSize()
+{
+	return m_size;
+}
+
 bool Disease::Compare(Cure* t_Cure)
 {
 	for (int x = 0; x < m_size; x++)
@@ -29,6 +35,7 @@ bool Disease::Compare(Cure* t_Cure)
 			return false;
 		}
 	}
+	t_Cure->setIsReady();
 	return true;
 }
 
