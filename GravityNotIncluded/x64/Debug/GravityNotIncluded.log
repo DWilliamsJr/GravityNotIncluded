@@ -1,0 +1,5 @@
+﻿  Timer.cpp
+d:\gravity_\gravitynotincluded\gravitynotincluded\source\debugging\timer.cpp(20): warning C4244: 'argument': conversion from 'long' to 'short', possible loss of data
+  main.cpp
+  Generating Code...
+  GravityNotIncluded.vcxproj -> D:\Gravity_\GravityNotIncluded\x64\Debug\GravityNotIncluded.exe
