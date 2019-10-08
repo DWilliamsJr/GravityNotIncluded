@@ -3,44 +3,42 @@
 
 
 Entity::Entity()
+{}
+Entity::Entity(AI* t_AI)
 {
-	
-	m_ResConsumption.Food = distribution(generator);
-	m_ResConsumption.Water = distribution(generator);
-	m_ResConsumption.Medicine = distribution(generator);
-	m_ResConsumption.Tech = distribution(generator);
-	m_ResConsumption.Wood = distribution(generator);
-
-	m_ResContribution.Food = distribution(generator);
-	m_ResContribution.Water = distribution(generator);
-	m_ResContribution.Medicine = distribution(generator);
-	m_ResContribution.Tech = distribution(generator);
-	m_ResContribution.Wood = distribution(generator);
-	
+	m_AI = t_AI;
+	m_Physics = nullptr;
+	m_Graphics = nullptr;
+	m_Sound = nullptr;
 	m_Disease = nullptr;
 
+	if (m_AI == nullptr)
+	{
+		message(_ERROR, "ENTITY CREATED WITHOUT AI", __FILE__, __LINE__);
+	}
+	else
+	{
+		m_AI->setParent(this);
+	}
 
-// GET CURE AI COMP
-// GET PHYSICS COMP
-// GET GRAPHICS COMP
-// GET SOUND COMP
+	message(_LOG, "CREATED NEW ENTITY", __FILE__, __LINE__);
+
+	m_ResConsumption.setResources((std::rand() % 4) + 1, (std::rand() % 4) + 1, (std::rand() % 4) + 1,
+		(std::rand() % 4) + 1, (std::rand() % 4) + 1);
+
+	m_ResContribution.setResources((std::rand() % 4), (std::rand() % 4), (std::rand() % 4),
+		(std::rand() % 4), (std::rand() % 4));
+
 }
 
-void Entity::pushState(State *T_State){}
-
-State* Entity::peekState()
+void Entity::setDisease(Disease* t_disease)
 {
-	return NULL;
-}
-
-State* Entity::popState()
-{
-	return NULL;
+	m_Disease = t_disease;
 }
 
 Disease* Entity::getDisease()
 {
-	return NULL;
+	return m_Disease;
 }
 
 Resources& Entity::getResContribution()
@@ -53,6 +51,9 @@ Resources& Entity::getResConsumption()
 	return m_ResConsumption;
 }
 
-//Entity_AI* Entity::getAI(){}
+Entity::~Entity()
+{
+	
+}
 
 void Entity::update(){}

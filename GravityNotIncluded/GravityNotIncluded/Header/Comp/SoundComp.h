@@ -1,8 +1,10 @@
 #pragma once 
 
 #include "PCH.h"
+#include "Componet.h"
 
-class SoundComp
+class SoundComp: public Componet
 {
-
+public :
+	~SoundComp();
 };

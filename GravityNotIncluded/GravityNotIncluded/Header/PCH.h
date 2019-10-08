@@ -1,15 +1,42 @@
 #pragma once 
-//--------------------PROGRAMMING JUNK----------------------
+
 #include <iostream>
 #include <stack>
 #include <list>
 #include <random>
 #include <vector>
 #include <sstream>
+#include <string>
 
+#include "Debugging/message.h"
+#include "Debugging/Timer.h"
 #include "Other/Resources.h"
-#include "Other/Request.h"
-#include "Other/State.h"
+
+
+//--------------------DEBUGGING JUNK-----------------------
+
+const short _LOG = 15;
+const short _INFO = 10;
+const short _WARN = 14;
+const short _ERROR = 12;
+const short _TIMER = 13;
+const short _TestGame = 11;
+
+
+
+#ifndef DEBUG_MODE
+#define DEBUG_MODE
+
+			//MESSAGEMANAGER
+static short s_maxSize = 200;
+static short s_index = 0;
+static HANDLE  hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+static message *Messages = new message[s_maxSize];
+
+
+#endif
+
+//---------------------PROGRAMMING JUNK--------------------
 
 union Pos
 {
@@ -23,31 +50,22 @@ union HitBox
 	int y;
 };
 
-	static std::default_random_engine generator;
-	static std::uniform_int_distribution<int> distribution(1, 5);
+	static  std::default_random_engine generator;
+	static  std::uniform_int_distribution<int> distribution(0, 6);
 
 
-//--------------------DEBUGGING JUNK-----------------------
-	
-	const short _LOG = 15;
-	const short _INFO = 10;
-	const short _WARN = 14;
-	const short _ERROR = 12;
-	const short _TIMER = 11;
-	const short PINK = 13;//currently not in use
+struct PoolIndexInformation
+{
+	short PoolIndex;
+	short Location;
+};
 
+struct Request
+{
+	Resources M_resources;
+	void* m_Disease;
+	void* m_Parent;
+	std::string m_Message;
+	bool completed = false;
+};
 
-
-#ifndef DEBUG_MODE
-	#define DEBUG_MODE
-
-#include "Debugging/message.h"
-#include "Debugging/Timer.h"
-
-			//MESSAGEMANAGER
-		static short maxSize = 100;
-		static HANDLE  hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-		static message *Messages = new message[maxSize];;
-		static short index = 0;
-
-#endif

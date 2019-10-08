@@ -127,6 +127,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Comp\AI\Cure_AI.cpp" />
+    <ClCompile Include="Source\Comp\AI\Disease_AI.cpp" />
+    <ClCompile Include="Source\Comp\AI\Entity_AI.cpp" />
+    <ClCompile Include="Source\Comp\AI\Planet_AI.cpp" />
+    <ClCompile Include="Source\Comp\Componet.cpp" />
     <ClCompile Include="Source\Comp\GraphicsComp.cpp" />
     <ClCompile Include="Source\Comp\PhysicsComp.cpp" />
     <ClCompile Include="Source\Comp\SoundComp.cpp" />
@@ -137,9 +142,13 @@
     <ClCompile Include="Source\GO\Entity.cpp" />
     <ClCompile Include="Source\GO\GameObject.cpp" />
     <ClCompile Include="Source\GO\Planet.cpp" />
+    <ClCompile Include="Source\GravityNotIncluded.cpp" />
     <ClCompile Include="Source\main.cpp" />
-    <ClCompile Include="Source\Other\State.cpp" />
-    <ClCompile Include="Source\Other\StateLibrary.cpp" />
+    <ClCompile Include="Source\Other\Effect.cpp" />
+    <ClCompile Include="Source\Other\ObjectPool.cpp" />
+    <ClCompile Include="Source\Other\Resources.cpp" />
+    <ClCompile Include="Source\Other\SM\State.cpp" />
+    <ClCompile Include="Source\Other\SM\StateLibrary.cpp" />
     <ClCompile Include="Source\PCH.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
@@ -149,6 +158,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\Comp\AI\AI.h" />
+    <ClInclude Include="Header\Comp\AI\Cure_AI.h" />
+    <ClInclude Include="Header\Comp\AI\Disease_AI.h" />
+    <ClInclude Include="Header\Comp\AI\Entity_AI.h" />
+    <ClInclude Include="Header\Comp\AI\Planet_AI.h" />
+    <ClInclude Include="Header\Comp\Componet.h" />
     <ClInclude Include="Header\Comp\GraphicsComp.h" />
     <ClInclude Include="Header\Comp\PhysicsComp.h" />
     <ClInclude Include="Header\Comp\SoundComp.h" />
@@ -159,10 +173,13 @@
     <ClInclude Include="Header\GO\Entity.h" />
     <ClInclude Include="Header\GO\GameObject.h" />
     <ClInclude Include="Header\GO\Planet.h" />
-    <ClInclude Include="Header\Other\Request.h" />
+    <ClInclude Include="Header\GravityNotIncluded.h" />
+    <ClInclude Include="Header\Other\Effect.h" />
+    <ClInclude Include="Header\Other\EffectLibrary.h" />
+    <ClInclude Include="Header\Other\ObjectPool.h" />
     <ClInclude Include="Header\Other\Resources.h" />
-    <ClInclude Include="Header\Other\State.h" />
-    <ClInclude Include="Header\Other\StateLibrary.h" />
+    <ClInclude Include="Header\Other\SM\State.h" />
+    <ClInclude Include="Header\Other\SM\StateLibrary.h" />
     <ClInclude Include="Header\PCH.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

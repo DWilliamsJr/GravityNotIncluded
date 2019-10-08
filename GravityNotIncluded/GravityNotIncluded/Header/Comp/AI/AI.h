@@ -1,7 +1,12 @@
+#pragma once
 #include "PCH.h"
+#include "Other/SM/StateLibrary.h"
+#include "Comp/Componet.h"
 
-class AI
+class AI: public Componet
 {
-protected:
-	virtual void update() = 0;
+public:
+	std::string updateMessage;
+	virtual void updateAI() = 0;
+	virtual void setParent(void *t_GO) = 0;
 };

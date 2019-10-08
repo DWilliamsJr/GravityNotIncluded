@@ -1,28 +1,33 @@
 #include "PCH.h"
 #include "GO/Cure.h"
 
-Cure::Cure(short size)
+Cure::Cure(short size, AI *t_cure)
 {
-	
+	m_Graphics = nullptr;
+	m_Sound = nullptr;
+	m_Physics = nullptr;
+
 	m_size = size;
-	m_Sequence = new char[size];
-	isReady = false;
-	// GET CURE AI COMP
-	// GET PHYSICS COMP
-	// GET GRAPHICS COMP
-	// GET SOUND COMP
+	m_Sequence = new char[size]();
+
+	if (t_cure != nullptr)
+	{
+	m_AI = t_cure;
+	m_AI->setParent(this);
+	message(_LOG, "NEW CURE CREATED", __FILE__, __LINE__);
+	}
+	else
+	{
+		message(_ERROR, "CURE CREATED WITHOUT A AI", __FILE__, __LINE__);
+	}
+	
 }
 
-Cure::Cure() {}
+Cure::Cure() {/* NEVER ACTUALLY CREATE A CURE LIKE THIS*/}
 
 void Cure::Construct(short t_index, char t_Char)
 {
 	m_Sequence[t_index] = t_Char;
-}
-
-bool Cure::Status()
-{
-	return isReady;
 }
 
 char* Cure::getSequence()
@@ -30,12 +35,17 @@ char* Cure::getSequence()
 	return m_Sequence;
 }
 
-void Cure::setIsReady()
+void Cure::setSequence(int x, char temp)
 {
-	isReady = true;
+	m_Sequence[x] = temp;
 }
 
 void Cure::update()
 {
 
+}
+
+Cure::~Cure()
+{
+	delete[] m_Sequence;
 }

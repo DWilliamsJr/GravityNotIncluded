@@ -2,15 +2,24 @@
 
 #include "PCH.h"
 
-struct Resources
+class Resources
 {
-	short Food;
+public:
+	int Food;
 
-	short Water;
+	int Water;
 
-	short Tech;
+	int Tech;
 
-	short Wood;
+	int Wood;
 
-	short Medicine;
+	int Medicine;
+
+	Resources();
+
+	void operator += ( Resources* res);
+
+	void operator -= (Resources* res);
+
+	void setResources(int fo, int wat, int te, int wood, int med);
 };

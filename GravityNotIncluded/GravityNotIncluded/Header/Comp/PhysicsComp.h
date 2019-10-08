@@ -1,8 +1,9 @@
 #pragma once 
 
 #include "PCH.h"
+#include "Componet.h"
 
-class PhysicsComp
+class PhysicsComp : public Componet
 {
 private:
 	float m_mass;
@@ -12,11 +13,12 @@ private:
 	HitBox m_HitBox;
 
 public:
-
+	~PhysicsComp();
+	/*
 	PhysicsComp();
 
 	void CheckCollision(PhysicsComp *t_PC);
 
-	void updateVel(/*vec2D &t_Vec*/);
-
+	void updateVel(/*vec2D &t_Vec);*/
+	
 };

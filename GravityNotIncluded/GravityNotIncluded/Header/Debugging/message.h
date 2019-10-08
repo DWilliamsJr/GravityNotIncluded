@@ -25,7 +25,4 @@ protected:
 	short m_Line;
 	std::string m_Text;
 
-
-	
-
 };

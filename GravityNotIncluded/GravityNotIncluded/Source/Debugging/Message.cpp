@@ -28,7 +28,7 @@ void message::ToString()
 void message::printMessages(short t_priority)
 {
 
-	for (int x = 0; x < index; x++)
+	for (int x = 0; x < s_index; x++)
 	{
 		//std::cout << "HELLO???" << std::endl;
 		if (Messages[x].Priority() == t_priority || t_priority == 0)
@@ -44,10 +44,10 @@ void message::printMessages(short t_priority)
 
 void message::addMessage(message &t_message)
 {
-	if (index < maxSize)
+	if (s_index < s_maxSize)
 	{
-		Messages[index] = t_message;
-		index++;
+		Messages[s_index] = t_message;
+		s_index++;
 	}
 	else
 	{
@@ -58,7 +58,5 @@ void message::addMessage(message &t_message)
 
 void message::clear()
 {
-	delete[] Messages;
-	message *Messages = new message[maxSize];
-	index = 0;
+	s_index = 0;
 }

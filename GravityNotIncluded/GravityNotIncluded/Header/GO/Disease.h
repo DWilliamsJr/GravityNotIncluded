@@ -1,30 +1,27 @@
+#include "PCH.h"
 #pragma once
 
-#include "PCH.h"
 #include "GO/GameObject.h"
 #include "Cure.h"
 
 class Disease: public GameObject
 {
 private:
-	const char* m_Sequence;
+	char* m_Sequence;
 	short m_size;
-	// chance to kill
-
-	//Disease_AI* m_AI;
 
 	void generate();
 
 public:
-	Disease(short size);
-
+	Disease(short size, AI* t_AI);
+	~Disease();
 	Disease();
 
 	void Evolve();
 
 	short getSize();
-
-	bool Compare(Cure* t_Cure);
+		// return -1 if cure is ready, how far off the incorrect character was.
+	void Compare(Cure* t_Cure);
 
 	void GameObject::update();
 };

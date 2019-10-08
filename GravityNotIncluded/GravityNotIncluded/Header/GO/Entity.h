@@ -9,32 +9,23 @@ class Entity: public GameObject
 {
 private:
 	Resources m_ResContribution;
-
 	Resources m_ResConsumption;
-
-	std::stack<State> m_State;
 
 	Disease* m_Disease;
 
-	//Entity_AI* m_AI;
-
 public:
+	Entity(AI* t_AI);
+
 	Entity();
+	~Entity();
 
-	void pushState(State *T_State);
-
-	State* peekState();
-
-	State* popState();
+	void GameObject::update();
 
 	Disease* getDisease();
+
+	void setDisease(Disease* t_disease);
 
 	Resources& getResContribution();
 
 	Resources& getResConsumption();
-
-	//Entity_AI* getAI();
-
-	void GameObject::update();
-
 };
