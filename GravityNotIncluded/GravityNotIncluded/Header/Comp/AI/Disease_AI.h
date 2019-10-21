@@ -10,8 +10,6 @@ class Disease_AI : public AI
 private:
 	Disease* ParentDisease;
 	short count;
-	std::clock_t StartTime;
-	double Elapsed;
 
 public:
 

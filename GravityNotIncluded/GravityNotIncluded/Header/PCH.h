@@ -28,7 +28,7 @@ const short _TestGame = 11;
 #define DEBUG_MODE
 
 			//MESSAGEMANAGER
-static short s_maxSize = 200;
+static short s_maxSize = 1000;
 static short s_index = 0;
 static HANDLE  hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 static message *Messages = new message[s_maxSize];
@@ -68,4 +68,19 @@ struct Request
 	std::string m_Message;
 	bool completed = false;
 };
+
+
+const short MEMBERLISTSIZE = 20;
+
+const short NumPlanet = 3;
+const short NumEntity = MEMBERLISTSIZE * NumPlanet;
+const short NumDisease = 5;
+const short NumCure = 5;
+const short NumCAI = NumCure;
+const short NumDAI = NumDisease;
+const short NumEAI = NumEntity;
+const short NumPAI = NumPlanet;
+const short NumPhysics = NumPlanet;
+const short NumSound = NumPlanet;
+const short NumGraphics = NumPlanet;
 

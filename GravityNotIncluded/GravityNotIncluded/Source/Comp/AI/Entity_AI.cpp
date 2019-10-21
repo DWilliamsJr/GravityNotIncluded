@@ -6,19 +6,13 @@ extern StateLibrary *StaticStateLibrary;
 Entity_AI::Entity_AI()
 {
 	message(_LOG, "CREATED NEW ENTITY_AI", __FILE__, __LINE__);
-	StartClock = std::clock();
-	Elapsed = 0;
 }
 
 void Entity_AI::updateAI()
 {
 	std::string tempID = ParentEntity->peekState().getID();
-	Elapsed = (std::clock() - StartClock) / (double)CLOCKS_PER_SEC;
 
-	if (Elapsed > .002)
-	{
-		Elapsed = 0;
-		StartClock = std::clock();
+
 		if (tempID.compare(StateIDList[HEALTHY]) == 0)
 		{
 			if (ParentEntity->getDisease() != nullptr )
@@ -29,7 +23,7 @@ void Entity_AI::updateAI()
 			}
 			Resources *temp = &ParentEntity->getResContribution();
 			Resources *tempConsume = &ParentEntity->getResConsumption();
-			switch (((std::rand() % 21) % 20))
+			switch ((std::rand() % 21))
 			{
 			case 1:
 			{
@@ -88,7 +82,7 @@ void Entity_AI::updateAI()
 		{
 			Resources *TempContrib = &ParentEntity->getResContribution();
 			Resources *tempConsume = &ParentEntity->getResConsumption();
-			switch (((std::rand() % 21) % 5)+1)
+			switch ((std::rand() % 21)+1)
 			{
 				case 1:
 				{
@@ -169,7 +163,6 @@ void Entity_AI::updateAI()
 			temp->Medicine = 0;
 		}
 	}
-}
 
 Entity* Entity_AI::getParent()
 {

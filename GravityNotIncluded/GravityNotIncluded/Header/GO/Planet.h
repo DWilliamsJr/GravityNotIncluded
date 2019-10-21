@@ -48,4 +48,6 @@ public:
 
 	void newRequest(Request *t_request);
 
+	void deleteCureAndDisease();
+	void DeleteRequest();
 };

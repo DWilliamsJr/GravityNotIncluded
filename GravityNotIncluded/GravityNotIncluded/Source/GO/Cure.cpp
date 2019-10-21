@@ -7,11 +7,11 @@ Cure::Cure(short size, AI *t_cure)
 	m_Sound = nullptr;
 	m_Physics = nullptr;
 
+	if (t_cure != nullptr)
+	{
 	m_size = size;
 	m_Sequence = new char[size]();
 
-	if (t_cure != nullptr)
-	{
 	m_AI = t_cure;
 	m_AI->setParent(this);
 	message(_LOG, "NEW CURE CREATED", __FILE__, __LINE__);

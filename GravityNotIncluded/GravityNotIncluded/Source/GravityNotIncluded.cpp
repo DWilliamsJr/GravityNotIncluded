@@ -4,24 +4,9 @@
 
 StateLibrary* StaticStateLibrary = new StateLibrary();
 
-const short MEMBERLISTSIZE = 20;
-
-const short NumPlanet = 5;
-const short NumEntity	= MEMBERLISTSIZE * NumPlanet;
-const short NumDisease	= 5;
-const short NumCure		= 5;
-const short NumCAI		= NumCure;
-const short NumDAI		= NumDisease;
-const short NumEAI		= NumEntity;
-const short NumPAI		= NumPlanet;
-const short NumPhysics	= NumPlanet;
-const short NumSound	= NumPlanet;
-const short NumGraphics = NumPlanet;
-
-
 
 GravityNotIncluded::GravityNotIncluded()
-{
+{	
 	TempPool = new ObjectPool(NumDisease, NumCure, NumEntity, NumPlanet, NumEAI, NumCAI, NumDAI, NumPAI, NumGraphics, NumPhysics, NumSound);
 	StaticStateLibrary->init();
 	PlanetList = new Planet*[NumPlanet]();
@@ -30,31 +15,53 @@ GravityNotIncluded::GravityNotIncluded()
 
 void GravityNotIncluded::GameLoop()
 {
-
+	Timer tempTimer;
 	std::ostringstream SS;
 	std::string temp;
-	Timer tempTimer;
-	for (int x = 0; x < 201; x++)
+	int x = 0;
+	double Elapsed;
+	std::clock_t StartTime = std::clock();
+	while (!glfwWindowShouldClose(GraphicsRenderer.getWindow()))
 	{
-
-		ProcessAI();
-		if (x % 50 == 0)
+		//for (int x = 0; x < 101; x++)
+		Elapsed = (std::clock() - StartTime) / (double)CLOCKS_PER_SEC;
+		if (Elapsed > .5f)
 		{
-			temp = "Resources Turn(" + std::to_string(x) + "): " + PlanetList[0]->getID() + " Food: " + std::to_string(PlanetList[0]->getResources().Food) + ", Water: " +
-				std::to_string(PlanetList[0]->getResources().Water) + ", Tech: " + std::to_string(PlanetList[0]->getResources().Tech) + ", Meds: " +
-				std::to_string(PlanetList[0]->getResources().Medicine) + ", Wood " + std::to_string(PlanetList[0]->getResources().Wood);
-			message(_TestGame, temp, __FILE__, __LINE__);
+			Elapsed = 0;
+			StartTime = std::clock();
+			x++;
+			ProcessAI();
+			Renderer();
+			if (x % 25 == 0)
+			{
+				temp = "Resources Turn(" + std::to_string(x) + "): " + PlanetList[0]->getID() + " Food: " + std::to_string(PlanetList[0]->getResources().Food) + ", Water: " +
+					std::to_string(PlanetList[0]->getResources().Water) + ", Tech: " + std::to_string(PlanetList[0]->getResources().Tech) + ", Meds: " +
+					std::to_string(PlanetList[0]->getResources().Medicine) + ", Wood " + std::to_string(PlanetList[0]->getResources().Wood);
+				message(_TestGame, temp, __FILE__, __LINE__);
 
-			temp = "Resources Turn(" + std::to_string(x) + "): " + PlanetList[1]->getID() + " Food: " + std::to_string(PlanetList[1]->getResources().Food) + ", Water: " +
-				std::to_string(PlanetList[1]->getResources().Water) + ", Tech: " + std::to_string(PlanetList[1]->getResources().Tech) + ", Meds: " +
-				std::to_string(PlanetList[1]->getResources().Medicine) + ", Wood " + std::to_string(PlanetList[1]->getResources().Wood);
-			message(_TestGame, temp, __FILE__, __LINE__);
+				temp = "Resources Turn(" + std::to_string(x) + "): " + PlanetList[1]->getID() + " Food: " + std::to_string(PlanetList[1]->getResources().Food) + ", Water: " +
+					std::to_string(PlanetList[1]->getResources().Water) + ", Tech: " + std::to_string(PlanetList[1]->getResources().Tech) + ", Meds: " +
+					std::to_string(PlanetList[1]->getResources().Medicine) + ", Wood " + std::to_string(PlanetList[1]->getResources().Wood);
+				message(_TestGame, temp, __FILE__, __LINE__);
+
+				temp = "Resources Turn(" + std::to_string(x) + "): " + PlanetList[2]->getID() + " Food: " + std::to_string(PlanetList[2]->getResources().Food) + ", Water: " +
+					std::to_string(PlanetList[2]->getResources().Water) + ", Tech: " + std::to_string(PlanetList[2]->getResources().Tech) + ", Meds: " +
+					std::to_string(PlanetList[2]->getResources().Medicine) + ", Wood " + std::to_string(PlanetList[2]->getResources().Wood);
+				message(_TestGame, temp, __FILE__, __LINE__);
+
+
+				message::printMessages(0);
+				message::clear();
+			}
 		}
 	}
 }
 
 
-void GravityNotIncluded::Renderer() {}
+void GravityNotIncluded::Renderer() 
+{
+	GraphicsRenderer.RenderLoop((GameObject**)PlanetList);
+}
 void GravityNotIncluded::ProcessAI() 
 {
 	for (int x = 0; x < NumPlanet; x++)
@@ -95,7 +102,6 @@ void GravityNotIncluded::ProcessAI()
 	}
 }
 
-void GravityNotIncluded::ProcessGraphics() {}
 void GravityNotIncluded::ProcessSound() {}
 void GravityNotIncluded::ProcessPhysics() {}
 
@@ -110,6 +116,10 @@ void GravityNotIncluded::ConstructWorld()
 
 	PlanetList[1] = TempPool->newPlanet();
 	PlanetList[1]->setID("MARS");
+
+	PlanetList[2] = TempPool->newPlanet();
+	PlanetList[2]->setID("PLUTO");
+
 }
 
 
@@ -147,9 +157,13 @@ void GravityNotIncluded::CreateNewGO(Planet *t_Planet)
 		t_Planet->getDisease()->~Disease();
 		DeleteGO(t_Planet->getCure());
 		t_Planet->getCure()->~Cure();
-		t_Planet->setCure(nullptr);
-		t_Planet->setDisease(nullptr);
-		
+		t_message = "DELETE REQUEST";
+		t_Planet->deleteCureAndDisease();
+	}
+	if (t_message.compare("DELETE REQUEST") == 0)
+	{
+		delete t_Planet->getRequest();
+		t_Planet->DeleteRequest();
 	}
 	t_Planet->getAI()->updateMessage = "";
 }

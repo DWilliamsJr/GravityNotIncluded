@@ -14,6 +14,7 @@ Disease::Disease(short size, AI* t_AI)
 	}
 	else
 	{
+		message(_LOG, "CREATED NEW DISEASE", __FILE__, __LINE__);
 		m_size = size;
 		m_Sequence = new char[size];
 		m_AI->setParent(this);
@@ -60,10 +61,6 @@ void Disease::generate()
 
 Disease::~Disease()
 {
-	if (m_AI != nullptr)
-	{
-		
-	}
 	if (m_Sequence != nullptr)
 	{
 		delete [] m_Sequence;

@@ -5,18 +5,20 @@
 #include "GO/Planet.h"
 #include "Comp/AI/Planet_AI.h"
 
+#include "Renderer.h"
+
 class GravityNotIncluded
 {
 private:
 	Planet **PlanetList;
 
 	ObjectPool *TempPool;
+	Renderer GraphicsRenderer;
 
 	void Renderer();
 	void ProcessAI();
-	void ProcessGraphics();
 	void ProcessSound();
-		void ProcessPhysics();
+	void ProcessPhysics();
 	
 	void DeleteGO(GameObject *t_GO);
 	void ConstructWorld();

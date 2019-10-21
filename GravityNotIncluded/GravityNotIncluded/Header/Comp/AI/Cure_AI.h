@@ -9,8 +9,6 @@ class Cure_AI : public AI
 {
 private:
 	Cure* ParentCure;
-	std::clock_t CureStart;
-	double CureElapsed;
 
 public:
 	Cure_AI();

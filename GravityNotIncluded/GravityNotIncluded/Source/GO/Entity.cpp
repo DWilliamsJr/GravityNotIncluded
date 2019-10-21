@@ -19,15 +19,15 @@ Entity::Entity(AI* t_AI)
 	else
 	{
 		m_AI->setParent(this);
+
+		message(_LOG, "CREATED NEW ENTITY", __FILE__, __LINE__);
+
+		m_ResConsumption.setResources((std::rand() % 4) + 1, (std::rand() % 4) + 1, (std::rand() % 4) + 1,
+			(std::rand() % 4) + 1, (std::rand() % 4) + 1);
+
+		m_ResContribution.setResources((std::rand() % 4), (std::rand() % 4), (std::rand() % 4),
+			(std::rand() % 4), (std::rand() % 4));
 	}
-
-	message(_LOG, "CREATED NEW ENTITY", __FILE__, __LINE__);
-
-	m_ResConsumption.setResources((std::rand() % 4) + 1, (std::rand() % 4) + 1, (std::rand() % 4) + 1,
-		(std::rand() % 4) + 1, (std::rand() % 4) + 1);
-
-	m_ResContribution.setResources((std::rand() % 4), (std::rand() % 4), (std::rand() % 4),
-		(std::rand() % 4), (std::rand() % 4));
 
 }
 

@@ -7,8 +7,6 @@ class Planet_AI: public AI
 {
 private:
 	Planet* ParentPlanet;
-	std::clock_t StartTime;
-	double Elapsed;
 
 public:
 	Planet_AI();

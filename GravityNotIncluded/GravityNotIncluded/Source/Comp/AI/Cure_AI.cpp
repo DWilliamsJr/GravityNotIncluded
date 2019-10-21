@@ -6,17 +6,11 @@ extern StateLibrary *StaticStateLibrary;
 Cure_AI::Cure_AI()
 {
 	 message(_LOG, "CREATED NEW CURE_AI", __FILE__, __LINE__);
-	 CureStart = std::clock();
 }
 
 
 void Cure_AI::updateAI()
 {
-	CureElapsed = std::clock() - CureStart / (double)CLOCKS_PER_SEC;
-	if (CureElapsed > .001)
-	{
-		int x = 0;
-		CureStart = std::clock();
 		if (ParentCure->peekState().getID().compare(StateIDList[INPROGRESS]) == 0)
 		{
 			for(int x = 0; x < 5; x++)
@@ -32,7 +26,6 @@ void Cure_AI::updateAI()
 			return;
 		}
 	}
-}
 
 Cure* Cure_AI::getParent()
 {

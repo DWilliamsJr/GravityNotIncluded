@@ -9,8 +9,6 @@ class Entity_AI: public AI
 {
 private:
 	Entity* ParentEntity;
-	std::clock_t StartClock;
-	double Elapsed;
 
 public:
 	Entity_AI();

@@ -1,4 +1,5 @@
-﻿  Cure_AI.cpp
-d:\gravity_\gravitynotincluded\gravitynotincluded\source\comp\ai\cure_ai.cpp(8): warning C4244: 'argument': conversion from 'long' to 'short', possible loss of data
-d:\gravity_\gravitynotincluded\gravitynotincluded\source\comp\ai\cure_ai.cpp(30): warning C4244: 'argument': conversion from 'long' to 'short', possible loss of data
-  GravityNotIncluded.vcxproj -> D:\Gravity_\GravityNotIncluded\x64\Debug\GravityNotIncluded.exe
+﻿  Disease_AI.cpp
+f:\big project\gravitynotincluded\gravitynotincluded\source\comp\ai\disease_ai.cpp(9): warning C4244: 'argument': conversion from 'long' to 'short', possible loss of data
+f:\big project\gravitynotincluded\gravitynotincluded\source\comp\ai\disease_ai.cpp(17): warning C4244: 'argument': conversion from 'long' to 'short', possible loss of data
+f:\big project\gravitynotincluded\gravitynotincluded\source\comp\ai\disease_ai.cpp(23): warning C4244: 'argument': conversion from 'long' to 'short', possible loss of data
+  GravityNotIncluded.vcxproj -> F:\BIG PROJECT\GravityNotIncluded\x64\Debug\GravityNotIncluded.exe
