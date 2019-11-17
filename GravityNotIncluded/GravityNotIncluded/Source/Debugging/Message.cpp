@@ -30,7 +30,6 @@ void message::printMessages(short t_priority)
 
 	for (int x = 0; x < s_index; x++)
 	{
-		//std::cout << "HELLO???" << std::endl;
 		if (Messages[x].Priority() == t_priority || t_priority == 0)
 		{
 			FlushConsoleInputBuffer(hConsole);

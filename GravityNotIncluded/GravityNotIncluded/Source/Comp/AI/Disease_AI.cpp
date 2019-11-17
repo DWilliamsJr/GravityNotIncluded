@@ -14,13 +14,13 @@ void Disease_AI::updateAI()
 {
 	if ((ParentDisease->peekState().getID()).compare(StateIDList[STAGEONE]) == 0)
 	{
-		message(_TestGame, "Disease new state: Elapsed Time: " + StateIDList[STAGETWO], __FILE__, __LINE__);
+		message(_LOG, "Disease new state " + StateIDList[STAGETWO], __FILE__, __LINE__);
 
 		ParentDisease->pushState(&StaticStateLibrary->GetState(STAGETWO));
 	}
 	else if ((ParentDisease->peekState().getID()).compare(StateIDList[STAGETWO]) == 0)
 	{
-		message(_TestGame, "Disease new state: Elapsed Time: "  + StateIDList[STAGETHREE], __FILE__, __LINE__);
+		message(_LOG, "Disease new state "  + StateIDList[STAGETHREE], __FILE__, __LINE__);
 
 		ParentDisease->pushState(&StaticStateLibrary->GetState(STAGETHREE));
 		ParentDisease->Evolve();
@@ -41,5 +41,4 @@ void Disease_AI::setParent(void* t_parent)
 {
 	ParentDisease = (Disease*)t_parent;
 	ParentDisease->pushState(&StaticStateLibrary->GetState(STAGEONE));
-	std::cout << ParentDisease->peekState().getID() << std::endl;
 }

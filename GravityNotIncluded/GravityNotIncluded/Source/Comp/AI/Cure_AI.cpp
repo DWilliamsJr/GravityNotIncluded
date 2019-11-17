@@ -21,7 +21,7 @@ void Cure_AI::updateAI()
 					return;
 				}
 			}
-			message(_TestGame, "New Cure State: COMPLETED", __FILE__, __LINE__);
+			message(_LOG, "New Cure State: COMPLETED", __FILE__, __LINE__);
 			ParentCure->pushState(&StaticStateLibrary->GetState(COMPLETED));
 			return;
 		}

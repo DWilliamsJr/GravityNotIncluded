@@ -51,12 +51,12 @@ void Planet_AI::updateAI()
 	if (ParentState.compare(StateIDList[STABLE]) == 0)
 	{
 
-		if (ParentPlanet->getDisease() != nullptr && (std::rand() % 21) > 19)
+		if (ParentPlanet->getDisease() != nullptr && (std::rand() % 50) > 45)
 		{
-			message(_TestGame, ParentPlanet->getID() + ": New state DiseaseOutbreak. Elapsed Time: ", __FILE__, __LINE__);
+			message(_LOG, ParentPlanet->getID() + ": New state DiseaseOutbreak.", __FILE__, __LINE__);
 			ParentPlanet->pushState(&StaticStateLibrary->GetState(DISEASEOUTBREAK));	
 		}
-		else if ((std::rand() % 26) == 2 && ParentPlanet->getDisease() == nullptr)
+		else if ((std::rand() % 50) == 2 && ParentPlanet->getDisease() == nullptr)
 		{
 			updateMessage = "CREATE NEW DISEASE";
 			return;
@@ -73,11 +73,16 @@ void Planet_AI::updateAI()
 	{
 		ParentPlanet->popState();
 	}
-	else if (ParentPlanet->getDisease()->peekState().getID().compare(StateIDList[STAGETHREE]) == 0 && ParentState.compare(StateIDList[DISEASEOUTBREAK]) == 0)
+	else if (ParentPlanet->getDisease() != nullptr)
 	{
-		message(_TestGame, ParentPlanet->getID() + ": New state EPIDEMIC. Elapsed Time: ", __FILE__, __LINE__);
-		ParentPlanet->pushState(&StaticStateLibrary->GetState(EPIDEMIC));
+		if (ParentPlanet->getDisease()->peekState().getID().compare(StateIDList[STAGETHREE]) == 0 && ParentState.compare(StateIDList[DISEASEOUTBREAK]) == 0)
+		{
+			message(_LOG, ParentPlanet->getID() + ": New state EPIDEMIC.", __FILE__, __LINE__);
+			ParentPlanet->pushState(&StaticStateLibrary->GetState(EPIDEMIC));
+		}
+
 	}
+	
 	else if (((ParentState.compare(StateIDList[DISEASEOUTBREAK]) == 0 && (std::rand() % 31) == 12)
 				|| (ParentState.compare(StateIDList[EPIDEMIC]) == 0)) && ParentPlanet->getRequest() == nullptr)
 	{

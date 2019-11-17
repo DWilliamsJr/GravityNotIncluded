@@ -17,13 +17,13 @@ void Entity_AI::updateAI()
 		{
 			if (ParentEntity->getDisease() != nullptr )
 			{
-				message(_TestGame, "New Entity State: Sick", __FILE__, __LINE__);
+				message(_LOG, "New Entity State: Sick", __FILE__, __LINE__);
 				ParentEntity->pushState(&StaticStateLibrary->GetState(SICK));
 				return;
 			}
 			Resources *temp = &ParentEntity->getResContribution();
 			Resources *tempConsume = &ParentEntity->getResConsumption();
-			switch ((std::rand() % 21))
+			switch ((std::rand() % 100))
 			{
 			case 1:
 			{
@@ -82,7 +82,7 @@ void Entity_AI::updateAI()
 		{
 			Resources *TempContrib = &ParentEntity->getResContribution();
 			Resources *tempConsume = &ParentEntity->getResConsumption();
-			switch ((std::rand() % 21)+1)
+			switch ((std::rand() % 10)+1)
 			{
 				case 1:
 				{
@@ -145,7 +145,7 @@ void Entity_AI::updateAI()
 			}
 			else if (ParentEntity->getDisease()->peekState().getID().compare(StateIDList[STAGETHREE]) == 0 && (std::rand() % 51) == 4)
 			{
-				message(_TestGame, "New Entity State: Dead", __FILE__, __LINE__);
+				message(_LOG, "New Entity State: Dead", __FILE__, __LINE__);
 				ParentEntity->pushState(&StaticStateLibrary->GetState(DEAD));
 			}
 		}

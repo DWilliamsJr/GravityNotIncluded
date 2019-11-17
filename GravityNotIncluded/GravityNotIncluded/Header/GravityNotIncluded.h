@@ -4,8 +4,7 @@
 #include "Other/ObjectPool.h"
 #include "GO/Planet.h"
 #include "Comp/AI/Planet_AI.h"
-
-#include "Renderer.h"
+#include <thread>
 
 class GravityNotIncluded
 {
@@ -13,9 +12,12 @@ private:
 	Planet **PlanetList;
 
 	ObjectPool *TempPool;
-	Renderer GraphicsRenderer;
 
-	void Renderer();
+	Resources UserResources;
+
+	bool DirtyFlag;
+	std::string UserInput;
+
 	void ProcessAI();
 	void ProcessSound();
 	void ProcessPhysics();
@@ -29,4 +31,6 @@ public:
 	GravityNotIncluded();
 	~GravityNotIncluded();
 	void GameLoop();
+	void getInput();
+	void processInput();
 };

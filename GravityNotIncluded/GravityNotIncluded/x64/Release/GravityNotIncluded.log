@@ -1,0 +1,30 @@
+﻿  PCH.cpp
+  Cure_AI.cpp
+  Disease_AI.cpp
+  Entity_AI.cpp
+  Planet_AI.cpp
+  Componet.cpp
+  GraphicsComp.cpp
+  PhysicsComp.cpp
+  SoundComp.cpp
+  Message.cpp
+  Timer.cpp
+  Cure.cpp
+  Disease.cpp
+  Entity.cpp
+  GameObject.cpp
+  Planet.cpp
+  GravityNotIncluded.cpp
+  main.cpp
+  Effect.cpp
+  ObjectPool.cpp
+  Resources.cpp
+  Compiling...
+  State.cpp
+  StateLibrary.cpp
+  Renderer.cpp
+  Generating code
+f:\csc240\honorsproject\gravitynotincluded\gravitynotincluded\gravitynotincluded\source\go\gameobject.cpp(58): warning C4715: 'GameObject::peekState': not all control paths return a value
+  All 449 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  GravityNotIncluded.vcxproj -> F:\CSC240\HonorsProject\GravityNotIncluded\GravityNotIncluded\x64\Release\GravityNotIncluded.exe

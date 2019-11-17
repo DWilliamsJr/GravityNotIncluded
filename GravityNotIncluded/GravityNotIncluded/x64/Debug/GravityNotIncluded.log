@@ -1,5 +1,16 @@
-﻿  Disease_AI.cpp
-f:\big project\gravitynotincluded\gravitynotincluded\source\comp\ai\disease_ai.cpp(9): warning C4244: 'argument': conversion from 'long' to 'short', possible loss of data
-f:\big project\gravitynotincluded\gravitynotincluded\source\comp\ai\disease_ai.cpp(17): warning C4244: 'argument': conversion from 'long' to 'short', possible loss of data
-f:\big project\gravitynotincluded\gravitynotincluded\source\comp\ai\disease_ai.cpp(23): warning C4244: 'argument': conversion from 'long' to 'short', possible loss of data
-  GravityNotIncluded.vcxproj -> F:\BIG PROJECT\GravityNotIncluded\x64\Debug\GravityNotIncluded.exe
+﻿  GravityNotIncluded.cpp
+f:\csc240\honorsproject\gravitynotincluded\gravitynotincluded\gravitynotincluded\source\gravitynotincluded.cpp(72): warning C4244: 'argument': conversion from 'long' to 'short', possible loss of data
+f:\csc240\honorsproject\gravitynotincluded\gravitynotincluded\gravitynotincluded\source\gravitynotincluded.cpp(75): warning C4244: 'argument': conversion from 'long' to 'short', possible loss of data
+f:\csc240\honorsproject\gravitynotincluded\gravitynotincluded\gravitynotincluded\source\gravitynotincluded.cpp(110): warning C4244: 'argument': conversion from 'long' to 'short', possible loss of data
+f:\csc240\honorsproject\gravitynotincluded\gravitynotincluded\gravitynotincluded\source\gravitynotincluded.cpp(143): warning C4244: 'argument': conversion from 'long' to 'short', possible loss of data
+f:\csc240\honorsproject\gravitynotincluded\gravitynotincluded\gravitynotincluded\source\gravitynotincluded.cpp(156): warning C4244: 'argument': conversion from 'long' to 'short', possible loss of data
+f:\csc240\honorsproject\gravitynotincluded\gravitynotincluded\gravitynotincluded\source\gravitynotincluded.cpp(166): warning C4244: 'argument': conversion from 'long' to 'short', possible loss of data
+f:\csc240\honorsproject\gravitynotincluded\gravitynotincluded\gravitynotincluded\source\gravitynotincluded.cpp(174): warning C4244: 'argument': conversion from 'long' to 'short', possible loss of data
+f:\csc240\honorsproject\gravitynotincluded\gravitynotincluded\gravitynotincluded\source\gravitynotincluded.cpp(180): warning C4244: 'argument': conversion from 'long' to 'short', possible loss of data
+f:\csc240\honorsproject\gravitynotincluded\gravitynotincluded\gravitynotincluded\source\gravitynotincluded.cpp(187): warning C4244: 'argument': conversion from 'long' to 'short', possible loss of data
+f:\csc240\honorsproject\gravitynotincluded\gravitynotincluded\gravitynotincluded\source\gravitynotincluded.cpp(223): warning C4244: 'argument': conversion from 'long' to 'short', possible loss of data
+f:\csc240\honorsproject\gravitynotincluded\gravitynotincluded\gravitynotincluded\source\gravitynotincluded.cpp(282): warning C4244: 'argument': conversion from 'long' to 'short', possible loss of data
+f:\csc240\honorsproject\gravitynotincluded\gravitynotincluded\gravitynotincluded\source\gravitynotincluded.cpp(287): warning C4244: 'argument': conversion from 'long' to 'short', possible loss of data
+f:\csc240\honorsproject\gravitynotincluded\gravitynotincluded\gravitynotincluded\source\gravitynotincluded.cpp(294): warning C4244: 'argument': conversion from 'long' to 'short', possible loss of data
+f:\csc240\honorsproject\gravitynotincluded\gravitynotincluded\gravitynotincluded\source\gravitynotincluded.cpp(301): warning C4244: 'argument': conversion from 'long' to 'short', possible loss of data
+  GravityNotIncluded.vcxproj -> F:\CSC240\HonorsProject\GravityNotIncluded\GravityNotIncluded\x64\Debug\GravityNotIncluded.exe

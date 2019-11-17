@@ -72,7 +72,7 @@ struct Request
 
 const short MEMBERLISTSIZE = 20;
 
-const short NumPlanet = 3;
+const short NumPlanet = 9;
 const short NumEntity = MEMBERLISTSIZE * NumPlanet;
 const short NumDisease = 5;
 const short NumCure = 5;
